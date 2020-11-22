@@ -1,0 +1,596 @@
+@font-face {
+	font-family: 'GothamPro';
+	src        : url('../fonts/GothamPro-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style : normal;
+}
+
+:root {
+	--color-black     : #000;
+	--color-blue      : #5A3EC4;
+	--color-white     : #fff;
+	--color-light-gray: #C1C0CD;
+}
+
+html {
+	background-color: #E5E5E5;
+	font-family     : 'Montserrat', sans-serif;
+	font-size       : 10px;
+}
+
+body {
+	margin   : 0 auto;
+	max-width: 118.9rem;
+}
+
+.bookmaker-rating,
+.latest-forecast {
+	padding : 0 1rem 4.9rem;
+	position: relative;
+}
+
+h2 {
+	font-family : "GothamPro", sans-serif;
+	font-size   : 2rem;
+	padding-left: 0.7rem;
+}
+
+.toplist {
+	color        : #33312C;
+	counter-reset: betCounter 00;
+	list-style   : none;
+	padding      : 0;
+}
+
+.toplist_margin-top {
+	margin-top: 2.6rem;
+}
+
+.toplist__item {
+	align-items     : center;
+	background-color: var(--color-white);
+	border-radius   : 4px;
+	display         : flex;
+	height          : 7.1rem;
+	justify-content : space-between;
+	margin-bottom   : 1.6rem;
+	list-style      : none;
+	padding         : 0 3rem 0 7rem;
+	position        : relative;
+}
+
+.toplist__item::before {
+	color            : #3E3B4A;
+	counter-increment: betCounter;
+	content          : counter(betCounter, decimal-leading-zero)".";
+	display          : inline-block;
+	font-size        : 1.4rem;
+	left             : 0rem;
+	position         : absolute;
+	text-align       : right;
+	width            : 5.6rem;
+}
+
+.bet {
+	align-items    : center;
+	display        : flex;
+	font-size      : 1.6rem;
+	height         : 100%;
+	justify-content: flex-start;
+}
+
+.bet__logo {
+	background-repeat  : no-repeat;
+	background-position: center;
+	box-sizing         : border-box;
+	height             : 100%;
+	padding            : 0 1rem;
+	width              : 15.7rem;
+}
+
+.bet__logo_fonbet {
+	background-image: url(../img/fonbet.png);
+}
+
+.bet__logo_leon {
+	background-image: url(../img/leon.png);
+}
+
+.bet__logo_parimatch {
+	background-image: url(../img/parimatch.png);
+}
+
+.bet__logo_olimpbet {
+	background-image: url(../img/olimpbet.png);
+}
+
+.bet__name {
+	font-weight: bold;
+	width      : 11.3rem;
+}
+
+.bet__rating {
+	font-size: 0;
+	width    : 11.2rem;
+}
+
+.star-rating__wrap:after {
+	content: "";
+	display: table;
+	clear  : both;
+}
+
+.star-rating__input {
+	display: none;
+}
+
+.star-rating__ico {
+	background: url(../img/star.svg) center no-repeat;
+	cursor    : pointer;
+	display   : block;
+	float     : right;
+	height    : 2rem;
+	padding   : 0 0.4rem;
+	width     : 2rem;
+}
+
+.star-rating__ico:hover,
+.star-rating__ico:hover~.star-rating__ico,
+.star-rating__input:checked~.star-rating__ico {
+	background: url(../img/star_fill.svg) center/contain no-repeat;
+}
+
+.bet__gift {
+	font-weight  : bold;
+	padding-right: 1rem;
+	text-align   : right;
+	min-width    : 8.9rem;
+	margin-left  : 5.8rem;
+}
+
+.bet__gift::before {
+	background  : url(../img/gift.svg) center no-repeat;
+	content     : "";
+	display     : inline-block;
+	height      : 2rem;
+	margin-right: 1.4rem;
+	width       : 2rem;
+}
+
+.rub {
+	line-height  : 5px;
+	width        : 0.4em;
+	border-bottom: 1px solid #000;
+	display      : inline-block;
+}
+
+.btn-block {
+	align-items    : center;
+	display        : flex;
+	flex           : 1 1;
+	height         : 100%;
+	justify-content: flex-end;
+}
+
+.btn {
+	align-items    : center;
+	border         : 1px solid;
+	border-radius  : 5px;
+	box-sizing     : border-box;
+	color          : #191925;
+	cursor         : pointer;
+	display        : flex;
+	font-size      : 1.5rem;
+	font-weight    : 600;
+	height         : 3.5rem;
+	justify-content: center;
+	letter-spacing : -0.04em;
+	text-transform : uppercase;
+}
+
+.bet__feedback {
+	border-color: #67BC6D;
+	width       : 13rem;
+}
+
+.bet__review {
+	border-color: #DADADA;
+	margin      : 0 4.3% 0 4.3%;
+	width       : 8.7rem;
+}
+
+.bet__gotosite {
+	background-color: #E2455A;
+	border-color    : #E2455A;
+	color           : var(--color-white);
+	width           : 10.7rem;
+}
+
+.btn_showmore {
+	bottom      : 0;
+	border-color: #DADADA;
+	font-family : "GothamPro", sans-serif;
+	height      : 4.2rem;
+	left        : 50%;
+	position    : absolute;
+	transform   : translateX(-50%) skewX(-16deg);
+	width       : 16.6rem;
+}
+
+.btn_showmore_text {
+	font-weight: bold;
+	transform  : skewX(16deg);
+}
+
+.latest-forecast {
+	margin-top    : 8.7rem;
+	padding-bottom: 6.1rem;
+}
+
+.filter-forecast {
+	color         : #7A798A;
+	cursor        : pointer;
+	display       : flex;
+	font-family   : "GothamPro", sans-serif;
+	font-size     : 1.6rem;
+	gap           : 1.4rem;
+	text-transform: uppercase;
+	line-height   : 2.5rem;
+	position      : absolute;
+	right         : 1rem;
+	top           : 0;
+}
+
+.filter-forecast_active {
+	color: var(--color-blue);
+}
+
+.filter-forecast_inner-wrapper {
+	display   : flex;
+	gap       : 1.4rem;
+	margin-top: 3.5rem;
+}
+
+.forecast-list {
+	display  : flex;
+	flex-wrap: wrap;
+	flex     : 1 1;
+	gap      : 1.3rem;
+}
+
+.forecast {
+	background-color: var(--color-white);
+	border-radius   : 7px;
+	display         : flex;
+	flex            : 1 1;
+	flex-direction  : column;
+	justify-content : space-between;
+	margin-bottom   : 0.3rem;
+	min-width       : 33rem;
+	padding         : 2.1rem 0 1.3rem;
+}
+
+.forecast__sport {
+	color         : var(--color-blue);
+	font-size     : 1.1rem;
+	font-weight   : bold;
+	margin-left   : 2.2rem;
+	text-transform: uppercase;
+}
+
+.forecast__title {
+	color         : var(--color-black);
+	font-size     : 1.8rem;
+	margin        : 0.6rem 1rem 1.7rem 2.2rem;
+	letter-spacing: -0.01em;
+	line-height   : 2.4rem;
+}
+
+.forecast__expert-coefficient {
+	align-items    : center;
+	border-bottom  : 1px solid #F5F5F6;
+	display        : flex;
+	justify-content: space-between;
+	margin         : 0 1.9rem 1.1rem 2.1rem;
+	padding-bottom : 1.4rem;
+}
+
+.forecast__expert {
+	align-items: center;
+	display    : flex;
+}
+
+.forecast__expert-photo {
+	background-repeat  : no-repeat;
+	background-position: center;
+	border-radius      : 3px;
+	display            : inline-block;
+	height             : 4rem;
+	width              : 3.9rem;
+}
+
+.serega-kaper_photo {
+	background-image: url(../img/serega-kaper.png);
+}
+
+.forecast__expert-name {
+	color      : var(--color-light-gray);
+	font-size  : 1.4rem;
+	font-weight: 600;
+	margin-left: 1rem;
+}
+
+.forecast__coefficient {
+	align-items   : flex-end;
+	display       : flex;
+	flex-direction: column;
+	gap           : 0.1rem;
+}
+
+.forecast__coefficient-number {
+	color    : #403E51;
+	font-size: 1.8rem;
+}
+
+.forecast__coefficient-word {
+	color         : var(--color-light-gray);
+	font-size     : 1.1rem;
+	text-transform: uppercase;
+}
+
+.forecast__team-date {
+	align-items    : center;
+	color          : #403E51;
+	display        : flex;
+	justify-content: space-between;
+	margin         : 0 1.4rem 0 1rem;
+}
+
+.forecast__team {
+	align-items: center;
+	display    : flex;
+	flex       : 1 1;
+}
+
+.forecast__team-right {
+	flex-direction: row-reverse;
+}
+
+.forecast__emblem {
+	background-repeat  : no-repeat;
+	background-position: center;
+	display            : inline-block;
+	flex-shrink        : 0;
+	height             : 4rem;
+	width              : 4rem;
+}
+
+.shahter_emblem {
+	background-image: url(../img/shahter.png);
+}
+
+.dinamo_emblem {
+	background-image: url(../img/dinamo.png);
+}
+
+.forecast__team-name {
+	font-size    : 1.6rem;
+	margin       : 0 0.7rem 0 0.6rem;
+	overflow-wrap: anywhere;
+}
+
+.forecast__date {
+	align-items   : center;
+	display       : flex;
+	flex-direction: column;
+	gap           : 0rem;
+	padding       : 0.3rem 0 0 0.5rem;
+}
+
+.forecast__day {
+	color    : var(--color-light-gray);
+	font-size: 1.1rem;
+}
+
+.forecast__time {
+	font-size: 1.8rem;
+}
+
+.contest {
+	background   : url("../img/competition.png") center top/contain no-repeat;
+	border-radius: 15px;
+	height       : 46.6rem;
+	width        : 38.3rem;
+}
+
+@media (max-width: 1024px) and (min-width: 750px) {
+	html {
+		font-size: 8px;
+	}
+
+	.toplist__item {
+		padding-left: 5rem;
+	}
+
+	.toplist__item::before {
+		width: 4.2rem;
+	}
+
+	.bet__name {
+		text-align: center;
+	}
+
+	.bet__gift {
+		margin-left: 2rem;
+	}
+
+	.bet__feedback {
+		width: 11rem;
+	}
+}
+
+@media (max-width: 749px) {
+	html {
+		font-size: 10px;
+	}
+
+	.bookmaker-rating,
+	.latest-forecast {
+		padding: 0 0.5rem 1.9rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		padding  : 0;
+	}
+
+	.toplist__item {
+		display      : block;
+		height       : auto;
+		margin-bottom: 2rem;
+		padding      : 1rem 0.5rem 1rem 2.4rem;
+	}
+
+	.toplist__item::before {
+		font-size: 1rem;
+		top      : 50%;
+		transform: translateY(-50%);
+		width    : 2.2rem;
+	}
+
+	.bet {
+		font-size      : 1.1rem;
+		justify-content: space-between;
+		margin-bottom  : 1rem;
+	}
+
+	.bet__logo {
+		background-size: contain;
+		height         : 1.9rem;
+		padding        : 0;
+		width          : 7.1rem;
+	}
+
+	.bet__name {
+		padding: 0 0.5rem;
+		width  : auto;
+	}
+
+	.bet__rating {
+		width: auto;
+	}
+
+	.star-rating__ico {
+		background-size: contain;
+		height         : 1rem;
+		padding        : 0 0.2rem;
+		width          : 1rem;
+	}
+
+	.bet__gift {
+		margin-left  : 0;
+		min-width    : unset;
+		padding-right: 0.4rem;
+	}
+
+	.bet__gift::before {
+		background-size: contain;
+		height         : 1.3rem;
+		margin-right   : 0.6rem;
+		width          : 1.3rem;
+	}
+
+	.btn-block {
+		height         : auto;
+		justify-content: space-around;
+	}
+
+	.btn {
+		border-radius: 4px;
+		font-size    : 0.7rem;
+		height       : 1.7rem;
+	}
+
+	.bet__feedback {
+		margin: 0;
+		width : 6.4rem;
+	}
+
+	.bet__review {
+		margin: 0;
+		width : 5.2rem;
+	}
+
+	.bet__gotosite {
+		margin: 0;
+		width : 6.2rem;
+	}
+
+	.btn_showmore {
+		width: 7.9rem;
+	}
+
+	.latest-forecast {
+		margin-top    : 2.7rem;
+		padding-bottom: 2.8rem;
+	}
+
+	.filter-forecast {
+		font-size  : 1rem;
+		gap        : 1rem;
+		line-height: 1.9rem;
+		position   : static;
+	}
+
+	.filter-forecast_inner-wrapper {
+		flex-direction: column;
+		margin-top    : 1.5rem;
+	}
+
+	.contest {
+		display: none;
+	}
+
+	.forecast {
+		margin   : 0;
+		min-width: 31rem;
+		padding  : 0.5rem 0 1rem;
+	}
+
+	.forecast__sport {
+		font-size  : 0.7rem;
+		margin-left: 1rem;
+	}
+
+	.forecast__title {
+		font-size     : 1.3rem;
+		letter-spacing: normal;
+		line-height   : 1.8rem;
+		margin        : 0.3rem 0.5rem 0.8rem 1rem;
+	}
+
+	.forecast__expert-coefficient {
+		margin        : 0 1rem 0.7rem;
+		padding-bottom: 0.8rem;
+	}
+
+	.forecast__coefficient-word {
+		font-size: 0.9rem;
+	}
+
+	.forecast__team-name {
+		font-size: 1.2rem;
+	}
+
+	.forecast__date {
+		padding: 0;
+	}
+
+	.forecast__day {
+		font-size: 1rem;
+	}
+
+	.forecast__time {
+		font-size: 1.6rem;
+	}
+}
